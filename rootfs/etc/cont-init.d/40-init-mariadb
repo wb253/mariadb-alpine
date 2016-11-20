@@ -11,9 +11,8 @@ fi
 chown mysql:mysql /var/lib/mysql
 
 # Init database
-if [ ! -d /var/lib/mysql/wodby ]; then
+if [ ! -d /var/lib/mysql/enoc ]; then
     # Generate root password
-    MYSQL_ROOT_PASSWORD="$(pwgen -1 32)"
     echo $MYSQL_ROOT_PASSWORD > /var/lib/mysql/.root_password
     chmod 600 /var/lib/mysql/.root_password
 

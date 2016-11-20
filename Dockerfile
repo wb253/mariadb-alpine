@@ -1,6 +1,5 @@
 FROM alpine
 MAINTAINER wangbin <wangbin253@gmail.com>
-
 RUN apk add --no-cache \
         mariadb \
         mariadb-client \
@@ -20,4 +19,7 @@ RUN apk add --no-cache \
     # Disable confd service
     rm -rf /etc/services.d/*confd
 
+
 COPY rootfs /
+EXPOSE 3306
+CMD ["mysqld"]
